@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .select{
+            height: 150px;
+            width: 250px;
+            border-radius: 20px;
+            cursor: pointer;
+
+        }
+        .select:hover{
+            box-shadow: 0 0 10px white;
+        }
+        #primary{
+            height: 590px;
+            width: 1260px;
+        }
+        #cat{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 10px;
+            border-radius: 20px;
+            margin: 50px 0 0 50px;
+        }
+        nav{
+            height: 50px;
+            position: absolute;
+            z-index: 1;
+            box-shadow: 0 0 5px black;
+            width: 1257px;
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav>
+            <h1 style="text-align: center; color: white; padding: 5px 0 0 0;">CLICK TO CHANGE IMAGE</h1>
+        </nav>
+        
+        <div id="cat">
+            <img class="select" onclick="change(this)" src="images/1.jpg" alt="">
+            <div style="padding: 8px;"></div>
+            <img class="select" onclick="change(this)" src="images/2.jpg" alt="">
+            <div style="padding: 8px;"></div>
+            <img class="select" onclick="change(this)" src="images/3.jpg" alt="">
+        </div>
+
+        <img id="primary" src="images/2.jpg" alt="">
+    </div>
+
+    <script>
+        var primary= document.getElementById("primary");
+
+        function change(event){
+            primary.src= event.src;
+        }
+    </script>
+</body>
+</html>
